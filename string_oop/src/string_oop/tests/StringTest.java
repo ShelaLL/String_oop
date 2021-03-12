@@ -16,6 +16,13 @@ class StringTest {
 		assertArrayEquals(new char[]{'h', 'e', 'l', 'l', 'o'}, hello.toArray());
 		
 		assertEquals(5, hello.length());
-		assertEquals('h', hello.charAt(0));		
+		assertEquals('h', hello.charAt(0));	
+		
+		helloChars[0] = 'b';
+		assertArrayEquals(new char[]{'h', 'e', 'l', 'l', 'o'}, hello.toArray());
+		
+		char[] myChars = hello.toArray();
+		myChars[0] = 'b';
+		assertArrayEquals(new char[]{'h', 'e', 'l', 'l', 'o'}, hello.toArray());
 	}
 }

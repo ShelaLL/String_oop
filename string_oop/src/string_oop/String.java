@@ -11,13 +11,14 @@ package string_oop;
  */
 public class String {
 	
+	private char[] characters;
 	/**
 	 * Returns the sequence of characters represented by this object in an array.
 	 * @inspect | this
 	 * 
 	 * @basic
 	 */
-	public char[] toArray() {throw new RuntimeException("Not yet implemented.");}
+	public char[] toArray() {return characters.clone();}
 
 	/**
 	 * Returns the length of the sequence of text characters represented by this object
@@ -25,7 +26,7 @@ public class String {
 	 * @inspects | this
 	 * @post | result == toArray().length
 	 */
-	public int length() {throw new RuntimeException("Not yet implemented.");}
+	public int length() {return characters.clone().length;}
 	
 	/**
 	 * Returns the character at the given index in the sequence of characters represented by this object.
@@ -33,8 +34,12 @@ public class String {
 	 * @pre | 0 <= index && index < length()
 	 * @post | result == toArray()[index]
 	 */
-	public char charAt(int index) {throw new RuntimeException("Not yet implemented.");}
+	public char charAt(int index) {return characters.clone()[index];}
 	
+	//We make it into private because it is immutable class
+	private String(char[] characters) {
+		this.characters = characters;
+	}
 	/**
 	 * Returns a String object that represents the given sequence of characters
 	 * 
@@ -43,6 +48,10 @@ public class String {
 	 * @pre | characters != null
 	 * 
 	 */
-	public static String valueOf(char[] characters) {throw new RuntimeException("Not yet implemented.");}
+	//When have a factory method in our API, we do need a constructor to construct the object
+	public static String valueOf(char[] characters) {
+		return new String(characters.clone());
+}
 
 }
+//representation exposure!!!
