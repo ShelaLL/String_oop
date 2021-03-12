@@ -24,6 +24,5 @@ public class StringListTest {
 		yourStrings[0] = null;
 		assertArrayEquals(new char[] {'h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd', '!'}, myStringList.getConcatenation().toArray());
 	}
-
 }
 

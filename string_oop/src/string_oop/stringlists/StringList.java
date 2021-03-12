@@ -36,4 +36,4 @@ public class StringList {
 
 //clone: if not: allow the client to break the mutability;  
 //allow the client to break the representation invariants of a mutable class;
-//allow 
+
